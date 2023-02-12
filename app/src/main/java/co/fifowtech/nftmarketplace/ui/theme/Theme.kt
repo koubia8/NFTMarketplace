@@ -40,7 +40,7 @@ fun NFTMarketplaceTheme(
 
     MaterialTheme(
         colors = colors,
-        typography = Typography,
+        typography = NFTTypography,
         shapes = Shapes,
         content = content
     )

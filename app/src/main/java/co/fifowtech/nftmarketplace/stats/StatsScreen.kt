@@ -48,7 +48,7 @@ fun StatsScreen() {
     ) {
         Column ( Modifier.padding(bottom = 30.dp)){
             CustomeTabComponent()
-         Card(
+        /* Card(
              backgroundColor = Color.White.copy(0.15f),
              elevation = 0.dp,
              border = BorderStroke(1.5.dp,Color.White.copy(0.5f)),
@@ -56,7 +56,8 @@ fun StatsScreen() {
              modifier = Modifier.padding(16.dp, 20.dp)
          ) {
              RankingTable(rankings = rankings)
-         }
+         }*/
+            RankingTable(rankings = rankings)
         }
     }
 }
@@ -119,7 +120,7 @@ fun Modifier.customTabOffset(tabPosition: TabPosition) : Modifier = composed {
     )
     fillMaxSize()
         .wrapContentSize(Alignment.BottomStart)
-        .offset(x =indicatorOffset)
+        .offset(x = indicatorOffset)
         .width(indicatorWith)
 }
 

@@ -19,10 +19,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import co.fifowtech.nftmarketplace.R
 import co.fifowtech.nftmarketplace.ui.theme.NFTMarketplaceTheme
+import co.fifowtech.nftmarketplace.ui.theme.NFTTypography
+
 
 
 @Composable
-fun OnboardingScreen() {
+fun OnboardingScreen(navigationAction : () -> Unit) {
     Scaffold() {
         Box() {
             Image(
@@ -37,8 +39,11 @@ fun OnboardingScreen() {
                     vertical = 80.dp
                 )
                 .fillMaxSize()) {
-                Text(text = "Welcome to NFT Marketplace", color = Color.White, fontSize = 36.sp, fontWeight = FontWeight.Black);
-                Spacer(modifier = Modifier.fillMaxHeight(0.65f))
+                Text(
+                    text = "Welcome to NFT Marketplace",
+                    style = NFTTypography.h1
+                );
+                Spacer(modifier = Modifier.fillMaxHeight(0.58f))
                 Card(
                     elevation = 4.dp,
                     modifier = Modifier
@@ -75,9 +80,8 @@ fun OnboardingScreen() {
                             textAlign = TextAlign.Center
                         );
                         Spacer(modifier = Modifier.padding(bottom = 27.dp));
-
                         Button(
-                            onClick = { println("Hello") },
+                            onClick = navigationAction,
                             shape = RoundedCornerShape(percent = 50),
                             modifier = Modifier.border(
                                 width = 1.dp,
@@ -90,9 +94,10 @@ fun OnboardingScreen() {
                             )
                         ) {
                             Text(
-                                text = "Get started now !",
+                                text = "Get started now",
                                 fontSize = 15.sp,
-                                fontWeight = FontWeight.SemiBold
+                                fontWeight = FontWeight.SemiBold,
+                                modifier = Modifier.padding(horizontal = 40.dp, vertical = 4.dp)
                             );
                         }
                     }
@@ -106,6 +111,6 @@ fun OnboardingScreen() {
 @Composable
 fun CardPreview(){
     NFTMarketplaceTheme {
-        OnboardingScreen()
+        OnboardingScreen{}
     }
 }
